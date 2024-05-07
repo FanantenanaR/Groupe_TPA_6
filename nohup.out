@@ -1,0 +1,2 @@
+Opened existing store with config:
+-root /var/kv -store kvstore -host localhost -port 5000 -secure-config disable -restore-from-snapshot null -admin-web-port -1
