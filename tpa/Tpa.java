@@ -52,13 +52,13 @@ public class Tpa {
 
 
     public void initTPATablesAndData() {
-        dropTableImmatriculation();
+        /*dropTableImmatriculation();
         createTableImmatriculation();
-        loadImmatriculationDataFromFile(myTpPath+"/Immatriculations.csv");
+        loadImmatriculationDataFromFile(myTpPath+"/Immatriculations.csv");*/
 
-        /*dropTableCatalogue();
+        // dropTableCatalogue();
         createTableCatalogue();
-        loadCatalogueDataFromFile(myTpPath+"/Catalogue.csv");*/
+        loadCatalogueDataFromFile(myTpPath+"/Catalogue.csv");
     }
 
     public void dropTableImmatriculation() {
@@ -89,7 +89,7 @@ public class Tpa {
 
 public void createTableCatalogue() {
     String statement = "CREATE TABLE Catalogue (" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "id INTEGER, " +
             "marque STRING, " +
             "nom STRING, " +
             "puissance INTEGER, " +
@@ -99,7 +99,7 @@ public void createTableCatalogue() {
             "couleur STRING, " +
             "occasion BOOLEAN, " +
             "prix STRING, " +
-            "PRIMARY KEY(id))";
+            "PRIMARY KEY (id))";
     executeDDL(statement);
 }
 
@@ -211,6 +211,7 @@ public void createTableCatalogue() {
             br.readLine();
 
             // Parcourir le fichier ligne par ligne
+            int i = 0;
             while ((ligne = br.readLine()) != null) {
                 String[] immatriculationRecord = ligne.split(",");
 
@@ -231,8 +232,10 @@ public void createTableCatalogue() {
                 //                    " Puissance=" + puissance + " Longueur=" + longueur + " NbPlaces=" + nbPlaces +
                 //                    " NbPortes=" + nbPortes + " Couleur=" + couleur + " Occasion=" + occasion +
                 //                    " Prix=" + prix);
+                System.out.println(i);
 
                 insertImmatriculationRow(immatriculation, marque, nom, puissance, longueur, nbPlaces, nbPortes, couleur, occasion, prix);
+                i = i+1;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -262,22 +265,26 @@ public void createTableCatalogue() {
             // Ignorer la première ligne si elle contient des en-têtes de colonne
             br.readLine();
 
+            int i = 0;
             // Parcourir le fichier ligne par ligne
             while ((ligne = br.readLine()) != null) {
                 String[] catalogueRecord = ligne.split(",");
 
                 // Extraction des données de chaque ligne
-                String marque = catalogueRecord[1];
-                String nom = catalogueRecord[2];
-                int puissance = Integer.parseInt(catalogueRecord[3]);
-                String longueur = catalogueRecord[4];
-                int nbPlaces = Integer.parseInt(catalogueRecord[5]);
-                int nbPortes = Integer.parseInt(catalogueRecord[6]);
-                String couleur = catalogueRecord[7];
-                boolean occasion = Boolean.parseBoolean(catalogueRecord[8]);
-               String prix = catalogueRecord[9];
+                // int id = i;
+                String marque = catalogueRecord[0];
+                String nom = catalogueRecord[1];
+                int puissance = Integer.parseInt(catalogueRecord[2]);
+                String longueur = catalogueRecord[3];
+                int nbPlaces = Integer.parseInt(catalogueRecord[4]);
+                int nbPortes = Integer.parseInt(catalogueRecord[5]);
+                String couleur = catalogueRecord[6];
+                boolean occasion = Boolean.parseBoolean(catalogueRecord[7]);
+               String prix = catalogueRecord[8];
 
+               System.out.println(i);
                 insertCatalogueRow(marque, nom, puissance, longueur, nbPlaces, nbPortes, couleur, occasion, prix);
+                i = i+1;
             }
         } catch (Exception e) {
             e.printStackTrace();
