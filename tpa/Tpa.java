@@ -155,7 +155,7 @@ public void createTableCatalogue() {
         }
     }
 
-    private void insertCatalogueRow(String marque, String nom, int puissance, String longueur, int nbPlaces, int nbPortes, String couleur, boolean occasion, String prix) {
+    private void insertCatalogueRow(int id, String marque, String nom, int puissance, String longueur, int nbPlaces, int nbPortes, String couleur, boolean occasion, String prix) {
         System.out.println("**************************** Dans : insertCatalogueRow ***************************");
 
         try {
@@ -170,6 +170,7 @@ public void createTableCatalogue() {
         Row catalogueRow = tableCatalogue.createRow();
 
         // Remplir les colonnes de la ligne avec les données fournies.
+        catalogueRow.put("id", id);
         catalogueRow.put("marque", marque);
         catalogueRow.put("nom", nom);
         catalogueRow.put("puissance", puissance);
@@ -271,7 +272,7 @@ public void createTableCatalogue() {
                 String[] catalogueRecord = ligne.split(",");
 
                 // Extraction des données de chaque ligne
-                // int id = i;
+                int id = i;
                 String marque = catalogueRecord[0];
                 String nom = catalogueRecord[1];
                 int puissance = Integer.parseInt(catalogueRecord[2]);
@@ -283,7 +284,7 @@ public void createTableCatalogue() {
                String prix = catalogueRecord[8];
 
                System.out.println(i);
-                insertCatalogueRow(marque, nom, puissance, longueur, nbPlaces, nbPortes, couleur, occasion, prix);
+                insertCatalogueRow(id, marque, nom, puissance, longueur, nbPlaces, nbPortes, couleur, occasion, prix);
                 i = i+1;
             }
         } catch (Exception e) {
