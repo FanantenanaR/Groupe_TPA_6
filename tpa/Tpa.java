@@ -1,4 +1,4 @@
-package hello;
+package tpa;
 
 import oracle.kv.*;
 import oracle.kv.table.*;
@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
 
 public class Tpa {
     private final KVStore store;
-    private final String myTpPath = "/vagrant/TpBigData";
+    private final String myTpPath = "/vagrant/Groupe_TPA_6_csv";
     private final String tableImmatriculation = "Immatriculation";
     private final String tableCatalogue = "Catalogue";
 
@@ -52,13 +52,13 @@ public class Tpa {
 
 
     public void initTPATablesAndData() {
-        // dropTableImmatriculation();
-        // createTableImmatriculation();
-        // loadImmatriculationDataFromFile(myTpPath+"/tpnosql/hello/Immatriculations.csv");
+        dropTableImmatriculation();
+        createTableImmatriculation();
+        loadImmatriculationDataFromFile(myTpPath+"/Immatriculations.csv");
 
-        dropTableCatalogue();
+        /*dropTableCatalogue();
         createTableCatalogue();
-        loadCatalogueDataFromFile(myTpPath+"/tpnosql/hello/Catalogue.csv");
+        loadCatalogueDataFromFile(myTpPath+"/Catalogue.csv");*/
     }
 
     public void dropTableImmatriculation() {
