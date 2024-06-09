@@ -56,7 +56,7 @@ public class Tpa {
         createTableImmatriculation();
         loadImmatriculationDataFromFile(myTpPath+"/Immatriculations.csv");*/
 
-        // dropTableCatalogue();
+        dropTableCatalogue();
         createTableCatalogue();
         loadCatalogueDataFromFile(myTpPath+"/Catalogue.csv");
     }
@@ -82,7 +82,7 @@ public class Tpa {
             "nbPortes INTEGER, " +
             "couleur STRING, " +
             "occasion BOOLEAN, " +
-            "prix STRING, " + 
+            "prix INT, " + 
             "PRIMARY KEY(immatriculation))";
     executeDDL(statement);
 }
@@ -98,7 +98,7 @@ public void createTableCatalogue() {
             "nbPortes INTEGER, " +
             "couleur STRING, " +
             "occasion BOOLEAN, " +
-            "prix STRING, " +
+            "prix INT, " +
             "PRIMARY KEY (id))";
     executeDDL(statement);
 }
@@ -202,7 +202,7 @@ public void createTableCatalogue() {
         InputStream ips = null;        // Initialiser à null
         String ligne;
         System.out.println("**************************** Dans : loadImmatriculationDataFromFile ***************************");
-
+        System.out.println("filename "+immatriculationDataFileName);
         try {
             ips = new FileInputStream(immatriculationDataFileName);
             ipsr = new InputStreamReader(ips);
@@ -257,7 +257,7 @@ public void createTableCatalogue() {
         InputStream ips = null;        // Initialiser à null
         String ligne;
         System.out.println("**************************** Dans : loadCatalogueDataFromFile ***************************");
-
+        System.out.println("filename "+catalogueDataFileName);
         try {
             ips = new FileInputStream(catalogueDataFileName);
             ipsr = new InputStreamReader(ips);
