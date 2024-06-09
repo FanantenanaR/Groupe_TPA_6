@@ -1,0 +1,21 @@
+id,age,sexe,taux,situationfamiliale,nbenfantsacharge,deuxieme_voiture,prediction,typeVoitureText
+665caa3cf79a7173f3f37b4b,21.0,F,1396.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b4c,48.0,M,401.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b4d,26.0,F,420.0,Unknown,-1,true,8.0,Cabriolet
+665caa3cf79a7173f3f37b4e,35.0,M,223.0,Unknown,-1,false,1.0,Compacte
+665caa3cf79a7173f3f37b4f,27.0,F,153.0,Unknown,-1,false,1.0,Compacte
+665caa3cf79a7173f3f37b50,59.0,F,572.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b51,43.0,F,431.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b52,64.0,M,559.0,Unknown,-1,false,18.0,Véhicule de loisirs
+665caa3cf79a7173f3f37b53,22.0,M,154.0,Unknown,-1,false,1.0,Compacte
+665caa3cf79a7173f3f37b54,79.0,F,981.0,Unknown,-1,false,18.0,Véhicule de loisirs
+665caa3cf79a7173f3f37b55,55.0,M,588.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b56,19.0,F,212.0,Unknown,-1,false,1.0,Compacte
+665caa3cf79a7173f3f37b57,34.0,F,1112.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b58,60.0,M,524.0,Unknown,-1,true,8.0,Cabriolet
+665caa3cf79a7173f3f37b59,22.0,M,411.0,Unknown,-1,true,8.0,Cabriolet
+665caa3cf79a7173f3f37b5a,58.0,M,1192.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b5b,80.0,M,530.0,Unknown,-1,false,18.0,Véhicule de loisirs
+665caa3cf79a7173f3f37b5c,35.0,M,589.0,Unknown,-1,false,8.0,Cabriolet
+665caa3cf79a7173f3f37b5d,59.0,M,748.0,Unknown,-1,true,8.0,Cabriolet
+665caa3cf79a7173f3f37b5e,54.0,F,452.0,Unknown,-1,true,8.0,Cabriolet
